@@ -13,8 +13,8 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 mailchimp.setConfig({
-  apiKey: "d7654502d9e90a7036136dfd128de1f7-us13",
-  server: "us13",
+  apiKey: process.env.API_KEY,
+  server: process.env.server_key,
 });
 
 app.get("/", function(req, res) {
@@ -26,7 +26,7 @@ app.post("/", function(req, res) {
   const lastName1 = req.body.lName;
   const email1 = req.body.email;
 
-  const listId = "07339d855a";
+  const listId = process.env.list_key;
   const subscribingUser = {
     firstName: firstName1,
     lastName: lastName1,
@@ -53,7 +53,7 @@ app.post("/", function(req, res) {
 app.post('/failure' , function(req,res){
   res.redirect('/');
 });
-app.listen(process.env.PORT ||3000, function() {
+app.listen(proc ess.env.PORT ||3000, function() {
   console.log('Server running at port 3000');
 });
 
