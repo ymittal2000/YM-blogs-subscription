@@ -53,20 +53,6 @@ app.post("/", function(req, res) {
 app.post('/failure' , function(req,res){
   res.redirect('/');
 });
-app.listen(proc ess.env.PORT ||3000, function() {
+app.listen(process.env.PORT ||3000, function() {
   console.log('Server running at port 3000');
 });
-
-
-
-
-
-
-
-
-
-//API Key
-//d7654502d9e90a7036136dfd128de1f7-us13
-
-
-//audience id
